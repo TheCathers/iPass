@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.riven.service_admin.mapper.AdminInfoMapper">
+    <select id="UserInfo" resultType="VAdminInfo">
+        SELECT
+            admin_name,section_name,role_name,admin_state
+        from
+            admin_info as a
+        join
+            section_info as s
+            on a.section_id=s.section_id
+        join
+            role_info as r
+            on a.role_id=r.role_id
+    </select>
+</mapper>
